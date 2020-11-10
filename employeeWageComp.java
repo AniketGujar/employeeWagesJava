@@ -4,6 +4,8 @@ public class employeeWageComp {
 		int full_Time = 1;
 		int part_Time = 20;
 		int full_Day_Wage = 160;
+   for(int day=0; day<20; day++) {
+
 		double empCheck = Math.floor(Math.random()*10)%3;
 		int partTimeCheck = (int)Math.floor(Math.random()*10)%4;
 
@@ -25,4 +27,5 @@ public class employeeWageComp {
                         System.out.println("Employee is Present Part Time, Daily Wage = " + part_Time*4);
 			}
 	}
+   }
 }
