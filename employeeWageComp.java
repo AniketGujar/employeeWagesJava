@@ -1,4 +1,29 @@
+import java.util.Scanner;
+
 class EmployeeWage{
+	public static void main(String[] args) {
+    	System.out.println("Welcome to Employee Wage Computation Program");
+        EmployeeWage b =new EmployeeWage();
+        b.addCompany("LNT",30,2,10);
+        b.addCompany("Wipro",20,4,20);
+        b.compEmpWage();
+        }
+
+	int numOfCompany;
+        CompanyEmpWage[] Arr;
+        CompanyEmpWage Arr= new CompanyEmpWage[5];
+
+       static void addCompany(String company,int empRatePerHour,int numOfWorkingDays, int maxHoursPerMonth) {
+                Arr[numOfCompany]=new CompanyEmpWage(company,empRatePerHour,numOfWorkingDays,maxHoursPerMonth);
+                numOfCompany++;
+        }
+
+        public void compEmpWage(){
+                for (int i=0;i< numOfCompany; i++) {
+                        Arr[i].setTotalEmpWage(this.compEmpWage(Arr[i]));
+                        System.out.println(Arr[i]);
+                }
+        }
 
         public void monthlyWages(String a,int dw,int hdw,int hw){
                 int DailyWage=dw;
@@ -7,10 +32,14 @@ class EmployeeWage{
                 int OverTimeWage=0;
                 int OverTime;
                 int TotalWage=0;
-                String CompanyName=a;
 
-                 System.out.println("Employee Wage Computatuion For "+ CompanyName + " Company");
-                for(int i=1; i<=20;i++){
+
+                String CompanyName=a;
+		int numOfCompany=0;
+                System.out.println("Employee Wage Computatuion For "+ CompanyName + " Company");
+
+
+	for(int j=1;j<=20;j++){
 
                 int Attendance = (int)Math.floor(Math.random()*10)%7;
                 int OverTimeHours = (int)Math.floor(Math.random()*10)%4;
@@ -52,14 +81,10 @@ class EmployeeWage{
                 break;
                 }
         }
+                }
         }
-  public static void main(String[] args) {
-    System.out.println("Welcome to Employee Wage Computation Program");
-         EmployeeWage c1 = new EmployeeWage();
-         c1.monthlyWages("Wipro",160,80,20);
-         EmployeeWage c2 = new EmployeeWage();
-         c2.monthlyWages("TCS",170,70,35);
-         EmployeeWage c3 = new EmployeeWage();
-         c3.monthlyWages("LNT",190,90,35);
-  }
+
+	}
+}
+}
 }
