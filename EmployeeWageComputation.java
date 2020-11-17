@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 public class EmployeeWageComputation implements WageCalculation {
         String attendance;
         String isPartTime;
@@ -45,7 +46,7 @@ public class EmployeeWageComputation implements WageCalculation {
                         dailyWage=0;
                 }
                 return dailyWage;
-        }
+	}
         public void monthlyWageCalculation(ArrayList companiesList){
 		System.out.println("Employee - "+empName);
 		CompanyBuilder company;
@@ -56,18 +57,18 @@ public class EmployeeWageComputation implements WageCalculation {
 
 			int totalWorkingDays=0;
 			int totalWorkingHours=0;
-			while(totalWorkingDays!=company.maxWorkingDays && totalWorkingHours!=company.maxWorkingHours                        	employeeAttendance();
-                        	employeeAttendance();
+			while(totalWorkingDays!=company.maxWorkingDays && totalWorkingHours!=company.maxWorkingHours){ 
+	                       	employeeAttendance();
                         	getWorkingHours(company.partTimeHours,company.fullDayHours);
                         	dailyWage=dailyWageCalculation(company.wagePerHour);
                         	monthlyWage=monthlyWage+dailyWage;
                         	totalWorkingDays++;
-				totalWorkingHours=totalWorkingHours+workingHours;                	
+				totalWorkingHours=totalWorkingHours+workingHours;
 			}
                 	System.out.println("Company Name - "+company.companyName);
                 	System.out.println("Total Working Days - "+totalWorkingDays);
                 	System.out.println("Total Working Hours - "+totalWorkingHours);
                 	System.out.println("Monthly Wage - "+monthlyWage );
 		}
-        }
+}
 }
